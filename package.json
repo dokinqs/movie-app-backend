@@ -1,0 +1,9 @@
+{
+  "name": "movie-app-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.16.1"
+  }
+}
