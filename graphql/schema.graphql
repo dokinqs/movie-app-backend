@@ -9,6 +9,10 @@ type Query {
     movie(id: Int!): Movie
 }
 
+type Mutation {
+    addMovie(name: String!, score: Int!): Movie!
+}
+
 # similar to Postman
 # in http://localhost:4000/ graphql playground:
 # query {
