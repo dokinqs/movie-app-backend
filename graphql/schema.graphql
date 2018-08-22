@@ -1,18 +1,26 @@
 type Movie {
     id: Int!
-    name: String!
-    score: Int!
+    title: String!
+    rating: Float!
+    summary: String!
+    language: String!
+    medium_cover_image: String!
 }
 
 type Query {
-    movies: [Movie]!
-    movie(id: Int!): Movie
+    movies(limit: Int, rating: Float): [Movie]! 
 }
 
-type Mutation {
-    addMovie(name: String!, score: Int!): Movie!
-    deleteMovie(id: Int!): Boolean!
-}
+    # name: String!
+    # score: Int!
+
+    # movies: [Movie]!
+    # movie(id: Int!): Movie
+
+# type Mutation {
+#     addMovie(name: String!, score: Int!): Movie!
+#     deleteMovie(id: Int!): Boolean!
+# }
 
 # similar to Postman
 # in http://localhost:4000/ graphql playground:
