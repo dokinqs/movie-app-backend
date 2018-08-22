@@ -1,15 +1,13 @@
-const dokinqs = {
-    name: "Dokinqs",
-    age: 24,
-    gender: "female"
-}
+import { people, getById } from './db';
 
 const resolvers = {
     Query: {
-        person: () => dokinqs
+        people: () => people,
+        person: (obj, { id }) => getById(id) 
+        // aka args.id cuz obj destructuring
     }
 };
 
 export default resolvers;
 
-// MUST USE DOUBLE QUOTES 
+// DOUBLE QUOTES if const resolvers = { Query: { person: () => "dokinqs" } }
