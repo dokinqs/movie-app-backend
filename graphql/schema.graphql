@@ -11,6 +11,7 @@ type Query {
 
 type Mutation {
     addMovie(name: String!, score: Int!): Movie!
+    deleteMovie(id: Int!): Boolean!
 }
 
 # similar to Postman

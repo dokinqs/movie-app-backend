@@ -1,16 +1,16 @@
-export let movies = [
+let movies = [
     {
-        id: 0,
+        id: 1,
         name: "Inception",
         score: 97
     },
     {
-        id: 1,
+        id: 2,
         name: "Edge of Tomorrow",
         score: 98
     },
     {
-        id: 2,
+        id: 3,
         name: "Mission Impossible",
         score: 99
     }
@@ -25,9 +25,9 @@ export const getById = id => {
 
 export const deleteMovie = id => {
     const cleanedMovies = movies.filter(movie => id !== movie.id);
-    if (cleanedMovies.length > movies.length) {
+    if (movies.length > cleanedMovies.length) {
         // was a deletion, assign movie to new filtered array
-        movie = cleanedMovies;
+        movies = cleanedMovies;
         return true;
     } else {
         return false;
@@ -36,7 +36,8 @@ export const deleteMovie = id => {
 
 export const addMovie = (name, score) => {
     const newMovie = {
-        id: `${movies.length - 1}`,
+        // not good id cuz if only one undeleted movie left id would be 2 even if undeleted movie had id of 3 
+        id: `${movies.length + 1}`,
         name,
         score
     }
