@@ -47,5 +47,5 @@ export const getSuggestions = async id => {
     return movies;
 }
 
-// https://yts.am/api/v2/list_movies.json?minimum_rating=4?limit=5&sort_by=title default desc so reverse alphabetical order
+// https://yts.am/api/v2/list_movies.json?minimum_rating=4&limit=5&sort_by=title default desc so reverse alphabetical order
 // https://yts.am/api/v2/movie_details.json?movie_id=8677
