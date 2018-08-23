@@ -6,7 +6,7 @@ const LIST_MOVIES_URL = `${BASE_URL}list_movies.json`;
 const MOVIE_DETAILS_URL = `${BASE_URL}movie_details.json`;
 const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 
-export const getMovies = async (limit, rating) => {
+export const getMovies = async (limit, rating, sort) => {
     const {
         data: {
             data: { movies }
@@ -14,7 +14,8 @@ export const getMovies = async (limit, rating) => {
     } = await axios(LIST_MOVIES_URL, {
         params: {
             limit,
-            minimum_rating: rating
+            minimum_rating: rating,
+            sort_by: sort
         }
     });
     return movies;
@@ -45,3 +46,6 @@ export const getSuggestions = async id => {
     });
     return movies;
 }
+
+// https://yts.am/api/v2/list_movies.json?minimum_rating=4?limit=5&sort_by=title default desc so reverse alphabetical order
+// https://yts.am/api/v2/movie_details.json?movie_id=8677
